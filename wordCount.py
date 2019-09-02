@@ -66,7 +66,6 @@ Reads a speech file and generates a linked list without duplicates
   for line in words_file.readlines():
     
     combination = line.split()
-    # Considers the case where a username/password entry is incomplete
 
     helper = words_list
     duplicate = False
@@ -81,20 +80,20 @@ Reads a speech file and generates a linked list without duplicates
   return words_list
 
   """
-  Creates a linked list of Node objects based on password dictionary.
+  Creates a linked list of Node objects based on word dictionary.
   
   Args:
-    password_dict: A dictionary with keys are words and values as
+    words_dict: A dictionary with keys are words and values as
                    that word's count
   
   Returns:
-    password_list: A linked list of Node objects
+    words_list: A linked list of Node objects
 
   """
 def create_list_from_dict(words_dict):
       words_list = None
   for key in words_dict:
-    words_list = Node(key, password_dict[key], password_list)
+    words_list = Node(key, words_dict[key], words_list)
   return words_list
 
 	  """
@@ -174,7 +173,7 @@ def get_words_list_from_file(words_file):
         break
       helper = helper.next
     if not duplicate:
-      words_list = Node(combination[1], 1, password_list)
+      words_list = Node(combination[1], 1, words_list)
   return words_list
 
 def main(file1, file2)
